@@ -33,7 +33,7 @@ export class EntrarComponent implements OnInit {
 
 
       // this.userLogin.foto
-
+      console.log(environment)
       this.router.navigate(['/inicio'])
     }, erro => {
       if (erro.status == 500) {

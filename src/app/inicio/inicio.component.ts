@@ -39,6 +39,7 @@ export class InicioComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }
+    this.authService.refreshToken()
 
     this.getAllTemas()
     this.getAllPostagens()
@@ -65,6 +66,7 @@ export class InicioComponent implements OnInit {
   findByIdUser(){
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
+      console.log(this.user)
     })
   }
 
